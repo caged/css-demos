@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Demos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lake: {
+              1000: '#0c1619',
+              900: '#1B2637',
+              800: '#1C3C5C',
+              700: '#1E5181',
+              600: '#1F67A6',
+              500: '#207CCB',
+              400: '#3893E0',
+              300: '#66AAE5',
+              200: '#94C2EA',
+              100: '#C2D9EE',
+              50: '#F0F1F3'
+            }
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const debug = document.querySelector('#debug')
+      // const elements = document.querySelectorAll('[data-frame]')
+      // const observer = new IntersectionObserver(entries => {
+      //   for (const entry of entries) {
+      //     const { intersectionRect, boundingClientRect, rootBounds, intersectionRatio } = entry
+      //     debug.innerText = boundingClientRect.y
+      //     // console.table({ intersectionRect, boundingClientRect, rootBounds });
+      //     // const progress = (intersectionRect.height / boundingClientRect.height).toFixed(2)
+      //     const progress = boundingClientRect.y / boundingClientRect.height * -1
+      //     console.log(progress);
+
+      //     if (entry.isIntersecting) {
+      //       entry.target.style.setProperty('--scroll-y', progress);
+      //       entry.target.classList.add('is-visible');
+      //     } else {
+      //       entry.target.style.setProperty('--scroll-y', 0);
+      //       entry.target.classList.remove('is-visible');
+      //     }
+      //   }
+      // }, {
+      //   threshold: Array.from({ length: 101 }, (_, i) => i / 100)
+      // })
+      // for (const element of elements) {
+      //   observer.observe(element);
+      // }
+    });
+  </script>
+
+  <style type="text/tailwindcss">
+    main {
+      position: relative;
+      /* transform: translateY(theme("padding.20")); */
+      /* border: 1px solid red; */
+      box-sizing: border-box;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100vh;
+      perspective: 2px;
+    }
+
+    section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transform-style: preserve-3d;
+    }
+
+    .no-parallax {
+      @apply bg-lake-1000;
+      z-index: 999;
+    }
+
+    .parallax:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateZ(-1px) scale(1.5);
+      background-size: 100%;
+      z-index: -1;
+    }
+
+    .bg::after {
+      background: url('./snow.jpeg') no-repeat center center;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body class="bg-lake-1000 text-gray-50 h-full">
+  <header class="fixed border-b border-lake-400 w-full backdrop-blur-lg z-10">
+    <nav class="flex justify-center">
+      <ul class="flex p-4">
+        <li class="p-4"><a href="#">Home</a></li>
+        <li class="p-4"><a href="#">About</a></li>
+        <li class="p-4"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="relative ">
+    <section class="no-parallax py-40 px-20">
+      <h1 class="text-7xl font-bold bg-lake-500 p-5 bg-opacity-10 backdrop-blur-sm">This is some copy for this
+        particular
+        website right here.
+      </h1>
+    </section>
+    <section class="parallax bg py-40 px-20">
+      <h1 class="text-7xl font-bold  p-5">
+        More copy here
+      </h1>
+    </section>
+    <section class="no-parallax py-40 px-20">
+      <h1 class="text-7xl font-bold bg-lake-500 p-5 bg-opacity-10 backdrop-blur-sm">
+        More copy here
+      </h1>
+    </section>
+  </main>
+  <footer class="p-20">
+    this is the footer
+  </footer>
+</body>
+
+</html>
