@@ -1,0 +1,62 @@
+:root {
+  --c-blue-0: #0F1B2E;
+  --c-blue-1: #1B2637;
+  --c-blue-2: #1C3C5C;
+  --c-blue-3: #1E5181;
+  --c-blue-4: #1F67A6;
+  --c-blue-5: #207CCB;
+  --c-blue-6: #3893E0;
+  --c-blue-7: #66AAE5;
+  --c-blue-8: #94C2EA;
+  --c-blue-9: #C2D9EE;
+  --c-blue-10: #F0F1F3;
+
+  --c-green-1: #182A1D;
+  --c-green-2: #184229;
+  --c-green-3: #195A35;
+  --c-green-4: #197340;
+  --c-green-5: #1A8B4C;
+  --c-green-6: #31A163;
+  --c-green-7: #5FB685;
+  --c-green-8: #8ECAA8;
+  --c-green-9: #BCDFCA;
+  --c-green-10: #EAF3EC;  
+
+  --c-pink-1: #371C39;
+  --c-pink-2: #5D1D60;
+  --c-pink-3: #821F87;
+  --c-pink-4: #A820AE;
+  --c-pink-5: #CD21D5;
+  --c-pink-6: #E239EA;
+  --c-pink-7: #E667EC;
+  --c-pink-8: #EB94EF;
+  --c-pink-9: #EFC2F1;
+  --c-pink-10: #F3F0F3;  
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--c-blue-0);
+  color: var(--c-blue-10);
+}
+
+
+
+
