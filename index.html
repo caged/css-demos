@@ -11,15 +11,28 @@
 <body class="antialiased bg-gray-100">
   <header class="fixed inset-0 w-full flex items-center h-20 px-5 border-b bg-white">
     <h1 class="font-bold text-xl">My site</h1>
-    <nav class="flex gap-5 ml-auto">
-      <div>
-        <a href="/">Home
+    <nav class="flex ml-20">
+      <div class="group py-7 px-6 border-b-2 border-transparent hover:border-emerald-500">
+        <button class="group-hover:opacity-50 cursor-default">Home</button>
+        <div
+          class="absolute top-16 inset-x-0 w-full z-50 bg-white shadow-xl transition group-hover:translate-y-[17px] translate-y-0 opacity-0  group-hover:opacity-100 invisible group-hover:visible east-in-out group-hover:transform duration-500">
+          <div class="p-5">
+            This is a home menu
+          </div>
+        </div>
       </div>
-      <div>
-        <a href="/">About</a>
+      <div class="group py-7 px-6 border-b-2 border-transparent hover:border-emerald-500">
+        <button class="group-hover:opacity-50 cursor-default">About</button>
+        <div
+          class="absolute top-16 inset-x-0 w-full z-50 bg-white shadow-xl transition group-hover:translate-y-[17px] translate-y-0 opacity-0  group-hover:opacity-100 invisible group-hover:visible east-in-out group-hover:transform duration-500">
+          <div class="p-5">
+            About menu content here though
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
-  <main class="h-[3000px] mt-20 p-5 border-t border-emerald-500">
+  <main class="h-[3000px] mt-20 p-5 ">
     body content
   </main>
   <footer class="bg-white border-t p-5">
