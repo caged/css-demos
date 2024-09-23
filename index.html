@@ -6,9 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Demos</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #my-menu {
+      transition: 500ms opacity ease-in-out, 100ms transform ease-in-out, 100ms display allow-discrete ease-in-out;
+      opacity: 0;
+    }
+
+    #my-menu:popover-open {
+      opacity: 1;
+      transform: translateY(0px);
+
+    }
+
+
+    @starting-style {
+      #my-menu:popover-open {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+    }
+  </style>
 </head>
 
 <body class="antialiased bg-gray-100">
+  <div popover id="my-menu" class="inset-auto top-20 right-0 absolute">
+    This is some menu content
+  </div>
   <header class="fixed inset-0 w-full flex items-center h-20 px-5 border-b bg-white">
     <h1 class="font-bold text-xl">My site</h1>
     <nav class="flex ml-20">
@@ -31,9 +54,17 @@
         </div>
       </div>
     </nav>
+    <div class="ml-auto">
+      <button class="" popovertarget="my-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
   </header>
   <main class="h-[3000px] mt-20 p-5 ">
-    body content
+
   </main>
   <footer class="bg-white border-t p-5">
     footer content
