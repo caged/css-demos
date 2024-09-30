@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Demos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    .image-grid {
+      @apply grid grid-cols-2 gap-2.5;
+    }
+
+    .image-cell {
+      @apply aspect-square  overflow-clip;
+    }
+
+    .thumb-image {
+      @apply object-cover size-full;
+      animation: slide linear;
+      animation-timeline: view();
+    }
+
+    @keyframes slide {
+      from {
+        scale: 1.5;
+        object-position: 100%;
+      }
+      to {
+        scale: 1;
+        object-position: 75%;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gray-100">
+  <header class="fixed inset-0 w-full flex z-50 items-center shadow-xs h-20 px-5 border-b bg-white">
+    <h1 class="font-bold text-xl">My site</h1>
+    <nav class="flex ml-20">
+      <div class="group py-7 px-6 border-b-2 border-transparent hover:border-emerald-500">
+        <button class="group-hover:opacity-50 cursor-default">Home</button>
+      </div>
+      <div class="group py-7 px-6 border-b-2 border-transparent hover:border-emerald-500">
+        <button class="group-hover:opacity-50 cursor-default">About</button>
+      </div>
+      </div>
+    </nav>
+  </header>
+  <main class="mt-20 p-5 ">
+    <div class="space-y-10">
+      <div class="border bg-gray-200 aspect-video  border-gray-300 p-5 text-center">
+        <img src="images/landscape-1.jpg" alt="landscape" class="w-full h-full object-cover">
+      </div>
+      <div class="border space-y-10 border-gray-300 p-20 text-xl leading-loose">
+        <p>Photography is the art and science of capturing light to create images that evoke emotions, tell stories, or
+          preserve moments in time. At its core, photography involves the manipulation of light, composition, and
+          perspective to craft visually compelling pictures. Whether using film or digital sensors, photographers work
+          with these elements to control exposure, depth of field, and sharpness, which are crucial in shaping the final
+          image. Photography can range from documentary styles that capture raw, unfiltered reality to highly conceptual
+          or abstract art forms that use the medium to create surreal or imaginative worlds. Each photograph becomes a
+          record, either personal or shared, that holds the power to connect people across time and space.</p>
+        <p>n the digital age, photography has become more accessible than ever, with smartphones putting powerful
+          cameras in the hands of millions. This accessibility has democratized the medium, enabling people to share
+          their experiences instantly. Advanced editing software has also expanded creative possibilities, allowing
+          photographers to manipulate their images with precision. From portraiture and landscapes to street photography
+          and photojournalism, the practice of photography spans numerous genres, each offering its own challenges and
+          rewards. While technical proficiency is essential, great photography ultimately relies on the photographer’s
+          ability to see and interpret the world uniquely, using the camera as a tool to communicate vision and emotion.
+        </p>
+      </div>
+
+      <div class="image-grid">
+        <div class="image-cell border bg-gray-200  border-gray-300 p-1 text-center">
+          <img src="images/landscape-1.jpg" alt="landscape" class="thumb-image">
+        </div>
+        <div class="image-cell border bg-gray-200 border-gray-300 p-1 text-center">
+          <img src="images/landscape-2.jpg" alt="landscape" class="thumb-image">
+        </div>
+        <div class="image-cell border bg-gray-200  border-gray-300 p-1 text-center">
+          <img src="images/landscape-3.jpg" alt="landscape" class="thumb-image">
+        </div>
+        <div class="image-cell border bg-gray-200  border-gray-300 p-1 text-center">
+          <img src="images/landscape-4.jpg" alt="landscape" class="thumb-image">
+        </div>
+        <div class="image-cell border bg-gray-200  border-gray-300 p-1 text-center">
+          <img src="images/landscape-5.jpg" alt="landscape" class="thumb-image">
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-white border-t p-5">
+    footer content
+  </footer>
+</body>
