@@ -12,23 +12,23 @@
     }
 
     .image-cell {
-      @apply aspect-square  overflow-clip;
+      @apply aspect-square overflow-clip;
     }
 
     .thumb-image {
       @apply object-cover size-full;
       animation: slide linear;
-      animation-timeline: view();
+      animation-timeline: view(y auto);
     }
 
     @keyframes slide {
       from {
-        scale: 1.5;
-        object-position: 100%;
+        scale: 1;
+        transform: translateY(0);
       }
       to {
-        scale: 1;
-        object-position: 75%;
+        scale: 1.5;
+        transform: translateY(-50px);
       }
     }
   </style>

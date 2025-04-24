@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Demos</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const target = document.getElementById('target');
+
+      let num = 0.0
+      const genNumber = () => {
+        // target.style.setProperty("--num", num += 0.25);
+        target.innerText = num += 0.25;
+      };
+
+      setInterval(genNumber, 100);
+      setTimeout(genNumber);
+    });
+  </script>
+  <style>
+    @property --num {
+      syntax: '<integer>';
+      inherits: false;
+      initial-value: 0;
+    }
+
+
+
+    #target {
+      --num: 0;
+      animation: counter 10s ease-in-out 1;
+      font-size: 5rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px;
+      counter-reset: mycount var(--num);
+    }
+
+    #target:after {
+      display: block;
+      font-size: 20px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      content: counters(mycount, "");
+    }
+  </style>
+</head>
+
+<body>
+  <div id="target">0</div>
+</body>
+
+</html>
